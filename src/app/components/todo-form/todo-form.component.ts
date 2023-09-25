@@ -13,7 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TodoSignalsService } from 'src/app/services/todo-signals.service';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { HeaderComponent } from '../header/header/header.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-todo-form',
@@ -26,7 +26,7 @@ import { HeaderComponent } from '../header/header/header.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   templateUrl: './todo-form.component.html',
   styleUrls: [],
@@ -37,9 +37,9 @@ export class TodoFormComponent {
   private dialogRefService = inject(MatDialogRef<HeaderComponent>);
   public allTodos = this.todoSignalsService.todosState();
 
-  public todosForm = new FormControl({
-    title: new FormGroup('', [Validators.required, Validators.minLength(3)]),
-    description: new FormControl([Validators.required, Validators.minLength(5)]),
+  public todosForm = new FormGroup({
+    title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(5),]),
   });
 
   public handleCreateNewTodo(): void {

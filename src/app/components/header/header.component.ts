@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { TodoFormComponent } from '../../todo-form/todo-form.component';
+import { TodoFormComponent } from '../todo-form/todo-form.component';
 
 
 @Component({
